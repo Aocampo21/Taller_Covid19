@@ -46,3 +46,8 @@ print(f'El número de personas que han fallecido es de: {num_fallecidos}')
 
 tipo_caso = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
 print(f'{tipo_caso}')
+
+# 8. Número de departamentos afectados
+
+num_dpto = len(data.groupby('Nombre departamento').size())
+print(f'{num_dpto} departamentos fueron afectados')
