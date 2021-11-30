@@ -23,3 +23,11 @@ print(f'El número de municipios afectados es: {num_municipios}')
 
 lista_mpio = data.groupby('Nombre municipio').size().sort_values(ascending=False)
 print(f'\nMunicipios afectados: {lista_mpio}')
+
+# 4. Número de personas que se encuentran en atención en casa
+
+data['Ubicación del caso'].replace('Casa', 'CASA', inplace=True)
+data['Ubicación del caso'].replace('casa', 'CASA', inplace=True) 
+
+atencion_casa = len(data[data['Ubicación del caso'] == 'CASA'])
+print(f'Número de personas que se encuentran con atención en casa: {atencion_casa}')
