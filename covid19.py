@@ -59,3 +59,8 @@ data['Nombre departamento'].replace('Tolima', 'TOLIMA', inplace=True)
 
 lista_dpto = data.groupby('Nombre departamento').size().sort_values(ascending=False)
 print(f'Departamentos afectados: {lista_dpto}')
+
+# 10. Ordene de mayor a menor por tipo de atención
+
+tipo_atencion = data.groupby('Ubicación del caso').size().sort_values(ascending=False)
+print(f'{tipo_atencion}') 
