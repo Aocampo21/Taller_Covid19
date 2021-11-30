@@ -51,3 +51,11 @@ print(f'{tipo_caso}')
 
 num_dpto = len(data.groupby('Nombre departamento').size())
 print(f'{num_dpto} departamentos fueron afectados')
+
+# 9.Liste los departamentos afectados(sin repetirlos)
+
+data['Nombre departamento'].replace('Caldas', 'CALDAS', inplace=True)
+data['Nombre departamento'].replace('Tolima', 'TOLIMA', inplace=True)
+
+lista_dpto = data.groupby('Nombre departamento').size().sort_values(ascending=False)
+print(f'Departamentos afectados: {lista_dpto}')
