@@ -41,3 +41,8 @@ print(f'El total de  personas recuperada es de: {num_recuperados}')
 
 num_fallecidos = data[data['Estado'] == 'Fallecido'].shape[0]
 print(f'El número de personas que han fallecido es de: {num_fallecidos}')
+
+# 7. Ordenar de Mayor a menor por tipo de caso (Importado, en estudio, Relacionado)
+
+tipo_caso = data.groupby('Tipo de contagio').size().sort_values(ascending=False)
+print(f'{tipo_caso}')
