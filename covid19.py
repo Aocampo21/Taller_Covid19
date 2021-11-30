@@ -36,3 +36,8 @@ print(f'Número de personas que se encuentran con atención en casa: {atencion_c
 
 num_recuperados = data[data['Recuperado'] == 'Recuperado'].shape[0]
 print(f'El total de  personas recuperada es de: {num_recuperados}') 
+
+# 6. Número de personas que ha fallecido
+
+num_fallecidos = data[data['Estado'] == 'Fallecido'].shape[0]
+print(f'El número de personas que han fallecido es de: {num_fallecidos}')
