@@ -84,3 +84,8 @@ print(f'Depaetamentos con más casos recuperados: {dpto_recuperados}')
 
 lista_mcontagiados = data.groupby('Nombre municipio').size().sort_values(ascending=False).head(10)
 print(f'Los 10 municipios más contagiados: {lista_mcontagiados}')
+
+# 15. Liste de mayor a menor los 10 municipios con mas casos de fallecidos
+
+mpio_fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Nombre municipio').size().sort_values(ascending=False).head(10)
+print(f'Municipios con más casos fallecidos: {mpio_fallecidos}')
