@@ -63,7 +63,7 @@ print(f'Departamentos afectados: {lista_dpto}')
 # 10. Ordene de mayor a menor por tipo de atención
 
 tipo_atencion = data.groupby('Ubicación del caso').size().sort_values(ascending=False)
-print(f'{tipo_atencion}') 
+print(f'{tipo_atencion}')
 
 # 11. Liste de mayor a menor los 10 departamentos con mas casos de contagiados
 
@@ -73,4 +73,9 @@ print(f'Los 10 departamentos con más casos de contagios son: {dptos}')
 # 12. Liste de mayor a menor los 10 departamentos con mas casos de fallecidos
 
 dpto_fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
-print(f'Departamentos con más casos fallecidos: {dpto_fallecidos}') 
+print(f'Departamentos con más casos fallecidos: {dpto_fallecidos}')
+
+# 13. Liste de mayor a menor los 10 departamentos con mas casos de recuperados
+
+dpto_recuperados = data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size().sort_values(ascending=False).head(10)
+print(f'Depaetamentos con más casos recuperados: {dpto_recuperados}')
