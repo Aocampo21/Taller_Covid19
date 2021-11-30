@@ -111,8 +111,12 @@ print( f' {num_personas}')
 promedio_edad = data.groupby( ['Nombre departamento', 'Nombre municipio', 'Sexo']).Edad.mean()
 print(f'{promedio_edad}')
 
-20. Liste de mayor a menor el número de contagiados por país de
-procedencia
+# 20. Liste de mayor a menor el número de contagiados por país de procedencia
 
 lista_procedencia = data['Nombre del país'].value_counts()
-print(f' Número de contagiados por país: {lista_procedencia}')   
+print(f' Número de contagiados por país: {lista_procedencia}')
+
+# 21. Liste de mayor a menor las fechas donde se presentaron mas contagios
+
+fecha_contagios = data.groupby('Fecha de diagnóstico').size().sort_values(ascending=False)
+print(f' Fechas donde se presentaron más contagios: {fecha_contagios}')
