@@ -191,3 +191,8 @@ plt.show()
 
 fallecidos = data[data['Recuperado'] == 'fallecido'].groupby('Edad').size().sort_values(ascending = False)
 print(f'{fallecidos}')
+
+# 31. Liste el porcentaje de personas por atención de toda Colombia
+
+porcentaje = ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)) / ((data.groupby('Ubicación del caso').size().sort_values(ascending = False)).sum())) * 100
+print(porcentaje)   
