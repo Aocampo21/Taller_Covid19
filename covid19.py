@@ -146,3 +146,8 @@ print(f'L tasa de recuperación por municipio es: {recuperacion_ciudad}')
 
 can_atencion = data.groupby(['Nombre municipio', 'Ubicación del caso']).size()
 print(f'{can_atencion}')
+
+# 26. Liste el promedio de edad por sexo por cada ciudad de contagiados
+
+prom_edad = data.groupby(['Nombre municipio', 'Sexo']).Edad.mean()
+print(f'{prom_edad}')
