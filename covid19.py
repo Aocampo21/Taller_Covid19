@@ -127,3 +127,10 @@ tasa_mortalidad = (len(data[data['Estado'] == 'Fallecido']) / len(data)) * 100
 tasa_recuperacion = (len(data[data['Recuperado'] == 'Recuperado']) / len(data)) * 100
 print('\nTasa de mortalidad: ', "{:.2f}".format(tasa_mortalidad))
 print('\nTasa de recuperacion: ', "{:.2f}".format(tasa_recuperacion))
+
+# 23. Liste la tasa de mortalidad y recuperación que tiene cada departamento
+
+tasa_mortalidad = (data[data['Recuperado'] == 'fallecido'].groupby('Nombre departamento').size() / len(data)) * 100
+print(f' Tasa de mortalidad que tiene cada dpto: {tasa_mortalidad}')
+tasa_recuperacion = (data[data['Recuperado'] == 'Recuperado'].groupby('Nombre departamento').size() / len(data)) * 100
+print(f' Tasa de recuperación que tiene cada dpto: {tasa_recuperacion}')
